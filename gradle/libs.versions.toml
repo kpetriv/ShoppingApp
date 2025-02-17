@@ -10,6 +10,7 @@ activityCompose = "1.10.0"
 composeBom = "2025.02.00"
 androidx-room = "2.6.1"
 ksp = "2.1.0-1.0.29"
+koin-bom = "4.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,6 +32,13 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx-room" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room" }
+
+# DI
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
+koin-core = { module = "io.insert-koin:koin-core" }
+koin-android = { module = "io.insert-koin:koin-android" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose" }
+koin-androidx-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
