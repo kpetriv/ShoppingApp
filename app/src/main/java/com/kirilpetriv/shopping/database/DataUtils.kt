@@ -2,7 +2,7 @@ package com.kirilpetriv.shopping.database
 
 import androidx.sqlite.db.SimpleSQLiteQuery
 import androidx.sqlite.db.SupportSQLiteQuery
-import com.kirilpetriv.shopping.domain.model.SortType
+import com.kirilpetriv.shopping.model.SortType
 
 fun buildShoppingItemsSortQuery(sortType: SortType): SupportSQLiteQuery {
     val query = StringBuilder("SELECT * FROM shopping_items ORDER BY isChecked ASC,")

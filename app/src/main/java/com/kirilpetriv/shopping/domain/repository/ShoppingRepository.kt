@@ -1,7 +1,7 @@
 package com.kirilpetriv.shopping.domain.repository
 
-import com.kirilpetriv.shopping.domain.model.ShoppingItem
-import com.kirilpetriv.shopping.domain.model.SortType
+import com.kirilpetriv.shopping.model.ShoppingItem
+import com.kirilpetriv.shopping.model.SortType
 import kotlinx.coroutines.flow.Flow
 
 interface ShoppingRepository {

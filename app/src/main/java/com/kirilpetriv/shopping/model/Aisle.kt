@@ -1,4 +1,4 @@
-package com.kirilpetriv.shopping.domain.model
+package com.kirilpetriv.shopping.model
 
 enum class Aisle(val number: Int) {
     Produce(1),

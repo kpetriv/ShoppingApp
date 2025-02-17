@@ -3,8 +3,8 @@ package com.kirilpetriv.shopping.data
 import com.kirilpetriv.shopping.database.ShoppingDao
 import com.kirilpetriv.shopping.database.ShoppingItemEntity
 import com.kirilpetriv.shopping.database.buildShoppingItemsSortQuery
-import com.kirilpetriv.shopping.domain.model.ShoppingItem
-import com.kirilpetriv.shopping.domain.model.SortType
+import com.kirilpetriv.shopping.model.ShoppingItem
+import com.kirilpetriv.shopping.model.SortType
 import com.kirilpetriv.shopping.domain.repository.ShoppingRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -34,6 +34,5 @@ class ShoppingRepositoryImpl(
         }
 
     override suspend fun clearAll() = withContext(dispatcher) { dao.clearAll() }
-
 
 }
