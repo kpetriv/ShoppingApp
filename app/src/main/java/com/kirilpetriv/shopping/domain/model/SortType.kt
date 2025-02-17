@@ -1,4 +1,4 @@
-package com.kirilpetriv.shopping.domain
+package com.kirilpetriv.shopping.domain.model
 
 enum class SortType {
     NAME,

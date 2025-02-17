@@ -1,4 +1,4 @@
-package com.kirilpetriv.shopping.domain
+package com.kirilpetriv.shopping.domain.model
 
 // For simplicity the state is incorporated into the domain object, although it should not be
 // Similarly for aisleNumber, it should be a separate domain object and the only reference
