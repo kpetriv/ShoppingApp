@@ -6,7 +6,9 @@ import com.kirilpetriv.shopping.domain.repository.ShoppingRepository
 import com.kirilpetriv.shopping.domain.usecase.AddShoppingItemUseCase
 import com.kirilpetriv.shopping.domain.usecase.ClearShoppingItemsUseCase
 import com.kirilpetriv.shopping.domain.usecase.GetShoppingItemsBySortTypeUseCase
+import com.kirilpetriv.shopping.domain.usecase.SortAndGroupShoppingItemsUseCase
 import com.kirilpetriv.shopping.domain.usecase.UpdateCheckedStatusUseCase
+import com.kirilpetriv.shopping.feature.ShoppingViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
@@ -22,4 +24,7 @@ val shoppingModule = module {
     single { ClearShoppingItemsUseCase(get()) }
     single { GetShoppingItemsBySortTypeUseCase(get()) }
     single { UpdateCheckedStatusUseCase(get()) }
+    single { SortAndGroupShoppingItemsUseCase() }
+
+    single { ShoppingViewModel(get(), get(), get(), get(), get()) }
 }
