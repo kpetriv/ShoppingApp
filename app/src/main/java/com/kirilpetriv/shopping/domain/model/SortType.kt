@@ -1,14 +1,14 @@
 package com.kirilpetriv.shopping.domain.model
 
 enum class SortType {
-    NAME,
-    AISLE,
-    TIME_ADDED;
+    Name,
+    Aisle,
+    Chronological;
 
     val comparator: Comparator<ShoppingItem>
         get() = when (this) {
-            NAME -> compareBy { it.name }
-            AISLE -> compareBy { it.aisleNumber }
-            TIME_ADDED -> compareBy { it.id }
+            Name -> compareBy { it.name }
+            Aisle -> compareBy { it.aisleNumber }
+            Chronological -> compareBy { it.id }
         }
 }
