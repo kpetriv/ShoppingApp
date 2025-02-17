@@ -70,6 +70,7 @@ fun ShoppingScreen(
     )
 }
 
+// Using material 3 components for simplicity.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ShoppingScreen(
@@ -166,6 +167,7 @@ fun ShoppingScreen(
                     },
                     trailingContent = {
                         Icon(
+                            // just adding a default icon. should be unique for each isle
                             imageVector = Icons.Default.ShoppingCart,
                             contentDescription = null
                         )
@@ -179,7 +181,10 @@ fun ShoppingScreen(
                                 TextDecoration.None
                         )
                     },
-                    supportingContent = { Text(stringResource(R.string.aisle, item.aisleNumber)) }
+                    supportingContent = {
+                        // i would skip this in favor of isle icon at the end
+                        Text(stringResource(R.string.aisle, item.aisleNumber))
+                    }
                 )
             }
         }

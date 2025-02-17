@@ -39,6 +39,7 @@ import com.kirilpetriv.shopping.R
 import com.kirilpetriv.shopping.model.Aisle
 import com.kirilpetriv.shopping.ui.theme.ShoppingTheme
 
+// Using material 3 components for simplicity.
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddItemBottomSheet(
@@ -76,7 +77,7 @@ fun AddItemBottomSheet(
             var expanded by remember { mutableStateOf(false) }
             Box {
                 TextButton(onClick = { expanded = true }) {
-                    Text("Aisle $selectedAisle")
+                    Text("$selectedAisle")
                     Icon(Icons.Default.ArrowDropDown, contentDescription = "Dropdown")
                 }
                 DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
@@ -89,7 +90,7 @@ fun AddItemBottomSheet(
                 }
             }
             Spacer(Modifier.height(16.dp))
-            
+
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.End
