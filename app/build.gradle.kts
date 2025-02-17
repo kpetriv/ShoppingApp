@@ -38,7 +38,20 @@ android {
     buildFeatures {
         compose = true
     }
+
+    packaging {
+        with(resources.pickFirsts) {
+            add("META-INF/LICENSE*")
+        }
+    }
 }
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+    // Fix for transitive dependency issue with ByteBuddy (Mockk)
+    jvmArgs("-Dnet.bytebuddy.experimental=true")
+}
+
 
 dependencies {
 
@@ -67,4 +80,14 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.viewmodel)
     implementation(libs.koin.androidx.compose)
+
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlin.test.coroutines)
+    testImplementation(libs.kotlin.test.junit5)
+
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.kotlin.test.coroutines)
+    androidTestImplementation(libs.kotlin.test.junit5)
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.room.test)
 }

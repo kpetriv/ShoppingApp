@@ -11,6 +11,9 @@ composeBom = "2025.02.00"
 androidx-room = "2.6.1"
 ksp = "2.1.0-1.0.29"
 koin-bom = "4.0.0"
+kotlin-coroutines = "1.9.0"
+mockk = "1.13.7"
+androidx-test-runner = "1.6.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -32,6 +35,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx-room" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room" }
+androidx-room-test = { module = "androidx.room:room-testing", version.ref = "androidx-room" }
 
 # DI
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
@@ -39,6 +43,12 @@ koin-core = { module = "io.insert-koin:koin-core" }
 koin-android = { module = "io.insert-koin:koin-android" }
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose" }
 koin-androidx-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel" }
+
+# Testing
+kotlin-test-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlin-coroutines" }
+kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidx-test-runner" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
