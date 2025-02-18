@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.kirilpetriv.shopping.feature.ShoppingScreen
 import com.kirilpetriv.shopping.ui.theme.ShoppingTheme
+import org.koin.compose.KoinContext
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,7 +14,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ShoppingTheme {
-                ShoppingScreen()
+                KoinContext {
+                    ShoppingScreen()
+                }
             }
         }
     }

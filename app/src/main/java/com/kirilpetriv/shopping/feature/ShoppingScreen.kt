@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
@@ -146,6 +147,10 @@ fun ShoppingScreen(
                 .padding(paddingValues)
                 .fillMaxSize()
         ) {
+            // Static item at the top prevents unwanted scrolling behavior. If this isn't added
+            // the list jumps position if you interact with the first item or if you try to add
+            // an item that would end up in the first position.
+            item(key = -1L) { Spacer(modifier = Modifier.height(0.dp)) }
             items(items, key = { it.id }) { item ->
                 ListItem(
                     modifier = Modifier
